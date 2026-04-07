@@ -1,0 +1,6 @@
+name = "todoseguros-bot"
+main = "chatbot-worker.js"
+compatibility_date = "2024-12-01"
+
+[vars]
+# GROQ_API_KEY should be set as a secret: wrangler secret put GROQ_API_KEY

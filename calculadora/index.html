@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Seguros Gratuita | TodoSeguros</title>
+  <meta name="description" content="Calcula cuánto deberías pagar en seguros según tu perfil. Herramienta gratuita para estimar costes de coche, hogar, salud, vida y más.">
+  <link rel="canonical" href="https://todoseguros.pro/calculadora/">
+  <meta property="og:title" content="Calculadora de Seguros Gratuita | TodoSeguros">
+  <meta property="og:description" content="Calcula cuánto deberías pagar en seguros según tu perfil. Herramienta 100% gratuita.">
+  <meta property="og:url" content="https://todoseguros.pro/calculadora/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/chatbot.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1513893788851225" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="header-logo" aria-label="TodoSeguros - Inicio">
+        <img src="/assets/img/logo.svg" alt="TodoSeguros" width="200" height="36">
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <div class="nav-dropdown">
+          <span class="nav-dropdown-trigger">Personales</span>
+          <div class="nav-dropdown-menu">
+            <a href="/seguro-coche/">🚗 Seguro de Coche</a>
+            <a href="/seguro-moto/">🏍️ Seguro de Moto</a>
+            <a href="/seguro-hogar/">🏠 Seguro de Hogar</a>
+            <a href="/seguro-salud/">🏥 Seguro de Salud</a>
+            <a href="/seguro-vida/">❤️ Seguro de Vida</a>
+            <a href="/seguro-decesos/">⚱️ Seguro de Decesos</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <span class="nav-dropdown-trigger">Otros seguros</span>
+          <div class="nav-dropdown-menu">
+            <a href="/seguro-mascotas/">🐾 Seguro de Mascotas</a>
+            <a href="/seguro-viaje/">✈️ Seguro de Viaje</a>
+            <a href="/seguro-comunidades/">🏢 Seguro de Comunidades</a>
+            <a href="/seguro-autonomos/">💼 Seguro de Autónomos</a>
+          </div>
+        </div>
+        <a href="/calculadora/">Calculadora</a>
+      </nav>
+      <div class="header-right">
+        <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil">
+      <span class="mobile-nav-section">Seguros Personales</span>
+      <a href="/seguro-coche/">🚗 Seguro de Coche</a>
+      <a href="/seguro-moto/">🏍️ Seguro de Moto</a>
+      <a href="/seguro-hogar/">🏠 Seguro de Hogar</a>
+      <a href="/seguro-salud/">🏥 Seguro de Salud</a>
+      <a href="/seguro-vida/">❤️ Seguro de Vida</a>
+      <a href="/seguro-decesos/">⚱️ Seguro de Decesos</a>
+      <span class="mobile-nav-section">Otros Seguros</span>
+      <a href="/seguro-mascotas/">🐾 Seguro de Mascotas</a>
+      <a href="/seguro-viaje/">✈️ Seguro de Viaje</a>
+      <a href="/seguro-comunidades/">🏢 Seguro de Comunidades</a>
+      <a href="/seguro-autonomos/">💼 Seguro de Autónomos</a>
+      <span class="mobile-nav-section">Herramientas</span>
+      <a href="/calculadora/">📊 Calculadora</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">Calculadora de Seguros</h1>
+      <p class="hero-subtitle">Estima cuánto deberías pagar en seguros según tu perfil familiar. Herramienta 100% gratuita y sin compromiso.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <form id="calculator-form" class="calc-form" novalidate>
+
+        <div class="calc-section">
+          <h2 class="calc-section__title">📍 Ubicación</h2>
+          <div class="form-group">
+            <label for="calc-province">Provincia</label>
+            <select id="calc-province" required>
+              <option value="">Selecciona tu provincia</option>
+              <option value="madrid">Madrid</option>
+              <option value="barcelona">Barcelona</option>
+              <option value="valencia">Valencia</option>
+              <option value="sevilla">Sevilla</option>
+              <option value="malaga">Málaga</option>
+              <option value="bilbao">Vizcaya</option>
+              <option value="zaragoza">Zaragoza</option>
+              <option value="murcia">Murcia</option>
+              <option value="palma">Islas Baleares</option>
+              <option value="las_palmas">Las Palmas</option>
+              <option value="tenerife">Santa Cruz de Tenerife</option>
+              <option value="alicante">Alicante</option>
+              <option value="cordoba">Córdoba</option>
+              <option value="valladolid">Valladolid</option>
+              <option value="vigo">Pontevedra</option>
+              <option value="gijon">Asturias</option>
+              <option value="hospitalet">L'Hospitalet</option>
+              <option value="coruna">A Coruña</option>
+              <option value="granada">Granada</option>
+              <option value="cadiz">Cádiz</option>
+              <option value="otra">Otra provincia</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calc-section">
+          <h2 class="calc-section__title">👨‍👩‍👧‍👦 Tu Familia</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="calc-people">Nº de personas en el hogar</label>
+              <input type="number" id="calc-people" min="1" max="10" value="2">
+            </div>
+            <div class="form-group">
+              <label for="calc-age">Tu edad</label>
+              <input type="number" id="calc-age" min="18" max="99" value="35">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="calc-income">Ingresos brutos anuales (€)</label>
+            <input type="number" id="calc-income" min="0" max="500000" value="25000" step="1000">
+          </div>
+        </div>
+
+        <div class="calc-section">
+          <h2 class="calc-section__title">🏠 Vivienda</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="calc-housing">Tipo de vivienda</label>
+              <select id="calc-housing">
+                <option value="alquiler">Alquiler</option>
+                <option value="propietario" selected>Propietario</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="calc-sqm">Superficie (m²)</label>
+              <input type="number" id="calc-sqm" min="20" max="500" value="80">
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-section">
+          <h2 class="calc-section__title">🐾 Mascotas</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="calc-dogs">Nº de perros</label>
+              <input type="number" id="calc-dogs" min="0" max="5" value="0">
+            </div>
+            <div class="form-group">
+              <label for="calc-cats">Nº de gatos</label>
+              <input type="number" id="calc-cats" min="0" max="5" value="0">
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-section">
+          <h2 class="calc-section__title">✅ Seguros que te interesan</h2>
+          <div class="calc-checks">
+            <label class="calc-check">
+              <input type="checkbox" name="types" value="coche" checked> 🚗 Coche
+            </label>
+            <label class="calc-check">
+              <input type="checkbox" name="types" value="moto"> 🏍️ Moto
+            </label>
+            <label class="calc-check">
+              <input type="checkbox" name="types" value="hogar" checked> 🏠 Hogar
+            </label>
+            <label class="calc-check">
+              <input type="checkbox" name="types" value="salud" checked> 🏥 Salud
+            </label>
+            <label class="calc-check">
+              <input type="checkbox" name="types" value="vida"> ❤️ Vida
+            </label>
+            <label class="calc-check">
+              <input type="checkbox" name="types" value="decesos" checked> ⚱️ Decesos
+            </label>
+            <label class="calc-check">
+              <input type="checkbox" name="types" value="mascotas"> 🐾 Mascotas
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary btn-block calc-submit">Calcular presupuesto estimado →</button>
+      </form>
+
+      <div id="calculator-results" class="calc-results" style="display:none">
+        <h2 class="section-title">Tu Presupuesto Estimado</h2>
+        <div id="results-breakdown" class="calc-breakdown"></div>
+        <div id="results-total" class="calc-total"></div>
+        <p class="calc-disclaimer">* Precios orientativos basados en medias del mercado español 2025. El coste real depende de tu perfil exacto, historial y la aseguradora elegida.</p>
+        <div class="calc-cta-row">
+          <a href="#comparador" class="btn-primary" onclick="document.getElementById('calculator-form').scrollIntoView({behavior:'smooth'});return false;">Recalcular</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-container ad-container--horizontal">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1513893788851225" data-ad-slot="XXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="section-title">Seguros más populares en España</h2>
+      <div class="grid grid--3">
+        <a href="/seguro-coche/" class="insurance-card">
+          <div class="insurance-card__icon">🚗</div>
+          <h3>Seguro de Coche</h3>
+          <p>Desde 25€/mes</p>
+        </a>
+        <a href="/seguro-salud/" class="insurance-card">
+          <div class="insurance-card__icon">🏥</div>
+          <h3>Seguro de Salud</h3>
+          <p>Desde 42€/mes</p>
+        </a>
+        <a href="/seguro-hogar/" class="insurance-card">
+          <div class="insurance-card__icon">🏠</div>
+          <h3>Seguro de Hogar</h3>
+          <p>Desde 12€/mes</p>
+        </a>
+        <a href="/seguro-decesos/" class="insurance-card">
+          <div class="insurance-card__icon">⚱️</div>
+          <h3>Seguro de Decesos</h3>
+          <p>Desde 7€/mes</p>
+        </a>
+        <a href="/seguro-vida/" class="insurance-card">
+          <div class="insurance-card__icon">❤️</div>
+          <h3>Seguro de Vida</h3>
+          <p>Desde 12€/mes</p>
+        </a>
+        <a href="/seguro-mascotas/" class="insurance-card">
+          <div class="insurance-card__icon">🐾</div>
+          <h3>Seguro de Mascotas</h3>
+          <p>RC obligatoria perros</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">TodoSeguros</div>
+          <p class="footer-desc">Comparador de seguros en España. Información gratuita y sin compromiso.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Seguros</h4>
+          <div class="footer-links">
+            <a href="/seguro-coche/">Seguro de Coche</a>
+            <a href="/seguro-moto/">Seguro de Moto</a>
+            <a href="/seguro-hogar/">Seguro de Hogar</a>
+            <a href="/seguro-salud/">Seguro de Salud</a>
+            <a href="/seguro-vida/">Seguro de Vida</a>
+            <a href="/seguro-decesos/">Seguro de Decesos</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Más Seguros</h4>
+          <div class="footer-links">
+            <a href="/seguro-mascotas/">Seguro de Mascotas</a>
+            <a href="/seguro-viaje/">Seguro de Viaje</a>
+            <a href="/seguro-comunidades/">Seguro de Comunidades</a>
+            <a href="/seguro-autonomos/">Seguro de Autónomos</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Recursos</h4>
+          <div class="footer-links">
+            <a href="/calculadora/">Calculadora</a>
+            <a href="/aviso-legal/">Aviso Legal</a>
+            <a href="/privacidad/">Privacidad</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 todoseguros.pro — Sitio informativo. No somos agentes ni corredores de seguros.</span>
+        <div class="footer-legal-links">
+          <a href="/aviso-legal/">Aviso Legal</a>
+          <a href="/privacidad/">Política de Privacidad</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/calculator.js"></script>
+  <script>
+    document.getElementById('calculator-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const province = document.getElementById('calc-province').value;
+      const people = parseInt(document.getElementById('calc-people').value) || 2;
+      const age = parseInt(document.getElementById('calc-age').value) || 35;
+      const income = parseInt(document.getElementById('calc-income').value) || 25000;
+      const housing = document.getElementById('calc-housing').value;
+      const dogs = parseInt(document.getElementById('calc-dogs').value) || 0;
+      const cats = parseInt(document.getElementById('calc-cats').value) || 0;
+      const types = Array.from(document.querySelectorAll('input[name="types"]:checked')).map(cb => cb.value);
+
+      if (!province) { alert('Selecciona tu provincia'); return; }
+      if (types.length === 0) { alert('Selecciona al menos un tipo de seguro'); return; }
+
+      const results = calculateBudget({ province, people, age, income, housing, dogs, cats, types });
+      displayResults(results, types);
+    });
+
+    function displayResults(results, types) {
+      const breakdown = document.getElementById('results-breakdown');
+      const total = document.getElementById('results-total');
+      const container = document.getElementById('calculator-results');
+
+      const labels = {
+        coche: '🚗 Seguro de Coche',
+        moto: '🏍️ Seguro de Moto',
+        hogar: '🏠 Seguro de Hogar',
+        salud: '🏥 Seguro de Salud',
+        vida: '❤️ Seguro de Vida',
+        decesos: '⚱️ Seguro de Decesos',
+        mascotas: '🐾 Seguro de Mascotas'
+      };
+
+      const links = {
+        coche: '/seguro-coche/',
+        moto: '/seguro-moto/',
+        hogar: '/seguro-hogar/',
+        salud: '/seguro-salud/',
+        vida: '/seguro-vida/',
+        decesos: '/seguro-decesos/',
+        mascotas: '/seguro-mascotas/'
+      };
+
+      let totalMonthly = 0;
+      let html = '';
+      for (const type of types) {
+        if (results[type] !== undefined) {
+          const monthly = results[type];
+          totalMonthly += monthly;
+          html += `<div class="calc-item">
+            <div class="calc-item__label">${labels[type] || type}</div>
+            <div class="calc-item__price">${monthly.toFixed(0)}€<span>/mes</span></div>
+            <a href="${links[type] || '#'}" class="calc-item__link">Comparar →</a>
+          </div>`;
+        }
+      }
+
+      breakdown.innerHTML = html;
+      total.innerHTML = `
+        <div class="calc-total__row">
+          <span class="calc-total__label">Total mensual estimado</span>
+          <span class="calc-total__amount">${totalMonthly.toFixed(0)}€/mes</span>
+        </div>
+        <div class="calc-total__row calc-total__row--yearly">
+          <span class="calc-total__label">Total anual estimado</span>
+          <span class="calc-total__amount">${(totalMonthly * 12).toFixed(0)}€/año</span>
+        </div>`;
+
+      container.style.display = 'block';
+      container.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+  <script src="/assets/js/chatbot.js"></script>
+  <script src="/assets/js/analytics.js"></script>
+</body>
+</html>

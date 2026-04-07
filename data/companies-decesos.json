@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Santa Lucía",
+    "logo": "santa-lucia",
+    "market_share": "25%",
+    "avg_monthly": 8,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.santalucia.es/seguros-decesos",
+    "highlights": ["Líder absoluto en decesos", "Más de 100 años de experiencia", "Red de tanatorios propios", "Servicio integral de gestiones"],
+    "rating": 4.2,
+    "featured": true
+  },
+  {
+    "name": "Mapfre Decesos",
+    "logo": "mapfre",
+    "market_share": "12%",
+    "avg_monthly": 9,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.mapfre.es/seguros/decesos/",
+    "highlights": ["Cobertura nacional e internacional", "Asistencia familiar incluida", "Gestión de trámites burocráticos", "Capital desde 3.600€"],
+    "rating": 3.9,
+    "featured": false
+  },
+  {
+    "name": "Ocaso",
+    "logo": "ocaso",
+    "market_share": "15%",
+    "avg_monthly": 7,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": false,
+    "website": "https://www.ocaso.es",
+    "highlights": ["Especialista en decesos", "Buena red de servicios funerarios", "Precio muy competitivo", "Coberturas ampliables"],
+    "rating": 3.8,
+    "featured": false
+  },
+  {
+    "name": "Allianz Decesos",
+    "logo": "allianz",
+    "market_share": "5%",
+    "avg_monthly": 10,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.allianz.es/seguros/decesos",
+    "highlights": ["Asistencia en viaje incluida", "Gestión documental completa", "Orientación psicológica para familia", "Cobertura en el extranjero"],
+    "rating": 3.9,
+    "featured": false
+  },
+  {
+    "name": "Adeslas Decesos",
+    "logo": "adeslas",
+    "market_share": "4%",
+    "avg_monthly": 8,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.segurcaixaadeslas.es/es/seguros-decesos",
+    "highlights": ["Combinable con seguro de salud", "Precio prima fija o natural", "Gestión integral", "Red de tanatorios amplia"],
+    "rating": 3.8,
+    "featured": false
+  }
+]

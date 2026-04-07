@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Mapfre Comunidades",
+    "logo": "mapfre",
+    "market_share": "15%",
+    "avg_monthly": 45,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.mapfre.es/seguros/comunidades/",
+    "highlights": ["Líder en seguros de comunidades", "Cobertura de daños por agua", "RC de la comunidad incluida", "Servicio de reparaciones urgentes"],
+    "rating": 4.0,
+    "featured": true
+  },
+  {
+    "name": "AXA Comunidades",
+    "logo": "axa",
+    "market_share": "8%",
+    "avg_monthly": 40,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.axa.es/seguros-comunidades",
+    "highlights": ["Coberturas flexibles", "Defensa jurídica incluida", "Protección de zonas comunes", "Asistencia 24h para averías"],
+    "rating": 3.9,
+    "featured": false
+  },
+  {
+    "name": "Mutua de Propietarios",
+    "logo": "mutua-propietarios",
+    "market_share": "10%",
+    "avg_monthly": 42,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.mutuadepropietarios.es",
+    "highlights": ["Especialista en comunidades", "Más de 180 años de experiencia", "Cobertura de defectos constructivos", "Gestión de siniestros especializada"],
+    "rating": 4.1,
+    "featured": true
+  },
+  {
+    "name": "Generali Comunidades",
+    "logo": "generali",
+    "market_share": "6%",
+    "avg_monthly": 38,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.generali.es/seguros/comunidades",
+    "highlights": ["Cobertura todo riesgo accidental", "Protección de instalaciones", "RC de ascensores incluida", "Buena relación calidad-precio"],
+    "rating": 3.8,
+    "featured": false
+  },
+  {
+    "name": "Allianz Comunidades",
+    "logo": "allianz",
+    "market_share": "5%",
+    "avg_monthly": 44,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.allianz.es/seguros/comunidades",
+    "highlights": ["Cobertura premium", "Protección contra vandalismo", "Asistencia jurídica completa", "Daños estéticos cubiertos"],
+    "rating": 3.9,
+    "featured": false
+  }
+]

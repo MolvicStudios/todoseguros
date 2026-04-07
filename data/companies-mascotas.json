@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Barkibu",
+    "logo": "barkibu",
+    "avg_monthly": 22,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.barkibu.com",
+    "highlights": ["Especialista en mascotas", "Consultas veterinarias online ilimitadas", "Sin periodo de carencia en accidentes", "Cobertura veterinaria completa"],
+    "rating": 4.3,
+    "featured": true
+  },
+  {
+    "name": "Mapfre Mascotas",
+    "logo": "mapfre",
+    "avg_monthly": 18,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.mapfre.es/seguros/mascotas/",
+    "highlights": ["RC obligatoria incluida", "Cobertura veterinaria", "Robo y extravío", "Asistencia telefónica veterinaria"],
+    "rating": 3.9,
+    "featured": false
+  },
+  {
+    "name": "Santévet",
+    "logo": "santevet",
+    "avg_monthly": 28,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.santevet.es",
+    "highlights": ["Especialista europeo en mascotas", "Reembolso del 80% en gastos veterinarios", "Sin límite de veterinario", "Cobertura para perros y gatos"],
+    "rating": 4.1,
+    "featured": true
+  },
+  {
+    "name": "AXA Mascotas",
+    "logo": "axa",
+    "avg_monthly": 15,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.axa.es/seguros-mascotas",
+    "highlights": ["RC obligatoria incluida", "Precio competitivo", "Cobertura básica y premium", "Combinable con otros seguros AXA"],
+    "rating": 3.8,
+    "featured": false
+  },
+  {
+    "name": "Caser Mascotas",
+    "logo": "caser",
+    "avg_monthly": 16,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.caser.es/seguros/mascotas",
+    "highlights": ["Buena relación calidad-precio", "RC para perros PPP incluida", "Asistencia veterinaria", "Cobertura de sacrificio y cremación"],
+    "rating": 3.7,
+    "featured": false
+  }
+]

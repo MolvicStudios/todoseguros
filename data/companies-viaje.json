@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Intermundial",
+    "logo": "intermundial",
+    "avg_monthly": 3,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.intermundial.es",
+    "highlights": ["Especialista en viajes", "Cobertura COVID incluida", "Cancelación de viaje", "Asistencia médica internacional 24h"],
+    "rating": 4.2,
+    "featured": true
+  },
+  {
+    "name": "IATI Seguros",
+    "logo": "iati",
+    "avg_monthly": 3,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.iatiseguros.com",
+    "highlights": ["Empresa española especialista", "Cobertura sin franquicia", "Gestión de siniestros rápida", "Seguro para nómadas digitales"],
+    "rating": 4.4,
+    "featured": true
+  },
+  {
+    "name": "Chapka",
+    "logo": "chapka",
+    "avg_monthly": 4,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": false,
+    "website": "https://www.chapka.com/es",
+    "highlights": ["Ideal para viajes largos", "Working Holiday cubierto", "Estudios en el extranjero", "Precio competitivo"],
+    "rating": 4.0,
+    "featured": false
+  },
+  {
+    "name": "Mapfre Viaje",
+    "logo": "mapfre",
+    "avg_monthly": 4,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.mapfre.es/seguros/viaje/",
+    "highlights": ["Aseguradora de confianza en España", "Cobertura amplia", "Seguro anual multiviaje", "Asistencia en carretera internacional"],
+    "rating": 3.9,
+    "featured": false
+  },
+  {
+    "name": "AXA Assistance",
+    "logo": "axa",
+    "avg_monthly": 5,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.axa-assistance.es",
+    "highlights": ["Asistencia mundial", "Repatriación incluida", "Equipaje protegido", "Cobertura de deportes de aventura"],
+    "rating": 3.8,
+    "featured": false
+  }
+]

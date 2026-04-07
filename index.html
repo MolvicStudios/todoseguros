@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TodoSeguros.pro | Compara Seguros en España — Coche, Hogar, Salud, Vida y más</title>
+  <meta name="description" content="Compara los mejores seguros en España: coche, moto, hogar, salud, vida, decesos, mascotas, viaje, comunidades y autónomos. Gratis y sin compromiso.">
+  <meta name="keywords" content="comparador seguros España, seguro coche barato, seguro hogar, seguro salud privado, seguro vida, seguro decesos, seguro moto, seguro mascotas">
+  <link rel="canonical" href="https://todoseguros.pro/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TodoSeguros.pro | Compara Seguros en España">
+  <meta property="og:description" content="Compara los mejores seguros en España. Coche, hogar, salud, vida y más. Gratis y sin compromiso.">
+  <meta property="og:image" content="https://todoseguros.pro/assets/img/og-image.jpg">
+  <meta property="og:url" content="https://todoseguros.pro/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/chatbot.css">
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1513893788851225" crossorigin="anonymous"></script>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "TodoSeguros",
+    "url": "https://todoseguros.pro",
+    "description": "Comparador de seguros en España. Coche, hogar, salud, vida, decesos, moto, mascotas, viaje, comunidades y autónomos.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://todoseguros.pro/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "inLanguage": "es"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="header-logo" aria-label="TodoSeguros - Inicio">
+        <img src="/assets/img/logo.svg" alt="TodoSeguros" width="200" height="36">
+      </a>
+
+      <nav class="nav-links" aria-label="Navegación principal">
+        <div class="nav-dropdown">
+          <span class="nav-dropdown-trigger">Personales</span>
+          <div class="nav-dropdown-menu">
+            <a href="/seguro-coche/">🚗 Seguro de Coche</a>
+            <a href="/seguro-moto/">🏍️ Seguro de Moto</a>
+            <a href="/seguro-hogar/">🏠 Seguro de Hogar</a>
+            <a href="/seguro-salud/">🏥 Seguro de Salud</a>
+            <a href="/seguro-vida/">❤️ Seguro de Vida</a>
+            <a href="/seguro-decesos/">⚱️ Seguro de Decesos</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <span class="nav-dropdown-trigger">Otros seguros</span>
+          <div class="nav-dropdown-menu">
+            <a href="/seguro-mascotas/">🐾 Seguro de Mascotas</a>
+            <a href="/seguro-viaje/">✈️ Seguro de Viaje</a>
+            <a href="/seguro-comunidades/">🏢 Seguro de Comunidades</a>
+            <a href="/seguro-autonomos/">💼 Seguro de Autónomos</a>
+          </div>
+        </div>
+        <a href="/calculadora/">Calculadora</a>
+      </nav>
+
+      <div class="header-right">
+        <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil">
+      <span class="mobile-nav-section">Seguros Personales</span>
+      <a href="/seguro-coche/">🚗 Seguro de Coche</a>
+      <a href="/seguro-moto/">🏍️ Seguro de Moto</a>
+      <a href="/seguro-hogar/">🏠 Seguro de Hogar</a>
+      <a href="/seguro-salud/">🏥 Seguro de Salud</a>
+      <a href="/seguro-vida/">❤️ Seguro de Vida</a>
+      <a href="/seguro-decesos/">⚱️ Seguro de Decesos</a>
+      <span class="mobile-nav-section">Otros Seguros</span>
+      <a href="/seguro-mascotas/">🐾 Seguro de Mascotas</a>
+      <a href="/seguro-viaje/">✈️ Seguro de Viaje</a>
+      <a href="/seguro-comunidades/">🏢 Seguro de Comunidades</a>
+      <a href="/seguro-autonomos/">💼 Seguro de Autónomos</a>
+      <span class="mobile-nav-section">Herramientas</span>
+      <a href="/calculadora/">📊 Calculadora</a>
+    </nav>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">Compara y ahorra en todos tus seguros</h1>
+      <p class="hero-subtitle">Encuentra el mejor seguro de coche, hogar, salud, vida y mucho más. Comparamos por ti. Gratis y sin compromiso.</p>
+
+      <div class="hero-tabs" role="tablist" aria-label="Tipos de seguro">
+        <a href="/seguro-coche/" class="hero-tab active">🚗 Coche</a>
+        <a href="/seguro-moto/" class="hero-tab">🏍️ Moto</a>
+        <a href="/seguro-hogar/" class="hero-tab">🏠 Hogar</a>
+        <a href="/seguro-salud/" class="hero-tab">🏥 Salud</a>
+        <a href="/seguro-vida/" class="hero-tab">❤️ Vida</a>
+        <a href="/seguro-decesos/" class="hero-tab">⚱️ Decesos</a>
+        <a href="/seguro-mascotas/" class="hero-tab">🐾 Mascotas</a>
+        <a href="/seguro-viaje/" class="hero-tab">✈️ Viaje</a>
+        <a href="/seguro-comunidades/" class="hero-tab">🏢 Comunidades</a>
+        <a href="/seguro-autonomos/" class="hero-tab">💼 Autónomos</a>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#comparador" class="btn-primary btn-lg">Comparar ahora →</a>
+      </div>
+      <p class="hero-sub-cta">Más de 30 aseguradoras comparadas</p>
+    </div>
+  </section>
+
+  <!-- ========== TRUST BAR ========== -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-bar__items">
+        <div class="trust-bar__item">
+          <span>47M</span> hogares asegurados en España
+        </div>
+        <div class="trust-bar__item">
+          <span>10</span> tipos de seguro
+        </div>
+        <div class="trust-bar__item">
+          <span>100%</span> Gratis y sin compromiso
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== COMPARADOR ========== -->
+  <section class="section" id="comparador">
+    <div class="container">
+      <h2 class="section-title">Compara Seguros</h2>
+
+      <div class="filter-bar">
+        <div class="filter-bar__inner">
+          <div class="form-group">
+            <label class="form-label" for="filter-type">Tipo de seguro</label>
+            <select class="form-select" id="filter-type">
+              <option value="all">Todos</option>
+              <option value="coche">Seguro de Coche</option>
+              <option value="moto">Seguro de Moto</option>
+              <option value="hogar">Seguro de Hogar</option>
+              <option value="salud">Seguro de Salud</option>
+              <option value="vida">Seguro de Vida</option>
+              <option value="decesos">Seguro de Decesos</option>
+              <option value="mascotas">Seguro de Mascotas</option>
+              <option value="viaje">Seguro de Viaje</option>
+              <option value="comunidades">Seguro de Comunidades</option>
+              <option value="autonomos">Seguro de Autónomos</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="filter-province">Provincia</label>
+            <select class="form-select" id="filter-province">
+              <option value="all">Todas las provincias</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="filter-price">Precio máximo/mes</label>
+            <select class="form-select" id="filter-price">
+              <option value="999">Sin límite</option>
+              <option value="25">25€</option>
+              <option value="50">50€</option>
+              <option value="100">100€</option>
+              <option value="200">200€</option>
+            </select>
+          </div>
+          <div class="filter-bar__btn">
+            <button class="btn-primary" id="filter-btn">Filtrar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="company-grid" id="comparator-results">
+        <!-- Cards se renderizan con JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AD SLOT 1 ========== -->
+  <div class="ad-container ad-container--horizontal">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-1513893788851225"
+         data-ad-slot="XXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ========== TIPOS DE SEGURO ========== -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="section-title">Tipos de Seguro</h2>
+      <p class="section-subtitle">Encuentra la cobertura que necesitas</p>
+
+      <div class="grid grid--5">
+        <a href="/seguro-coche/" class="insurance-type-card">
+          <img class="insurance-type-card__icon" src="/assets/img/icons/coche.svg" alt="" width="56" height="56">
+          <h3 class="insurance-type-card__name">Seguro de Coche</h3>
+          <p class="insurance-type-card__desc">Terceros, terceros ampliado y todo riesgo</p>
+        </a>
+        <a href="/seguro-moto/" class="insurance-type-card">
+          <img class="insurance-type-card__icon" src="/assets/img/icons/moto.svg" alt="" width="56" height="56">
+          <h3 class="insurance-type-card__name">Seguro de Moto</h3>
+          <p class="insurance-type-card__desc">Protege tu moto con la mejor cobertura</p>
+        </a>
+        <a href="/seguro-hogar/" class="insurance-type-card">
+          <img class="insurance-type-card__icon" src="/assets/img/icons/hogar.svg" alt="" width="56" height="56">
+          <h3 class="insurance-type-card__name">Seguro de Hogar</h3>
+          <p class="insurance-type-card__desc">Continente, contenido y responsabilidad civil</p>
+        </a>
+        <a href="/seguro-salud/" class="insurance-type-card">
+          <img class="insurance-type-card__icon" src="/assets/img/icons/salud.svg" alt="" width="56" height="56">
+          <h3 class="insurance-type-card__name">Seguro de Salud</h3>
+          <p class="insurance-type-card__desc">Sanidad privada sin listas de espera</p>
+        </a>
+        <a href="/seguro-vida/" class="insurance-type-card">
+          <img class="insurance-type-card__icon" src="/assets/img/icons/vida.svg" alt="" width="56" height="56">
+          <h3 class="insurance-type-card__name">Seguro de Vida</h3>
+          <p class="insurance-type-card__desc">Protege a tu familia ante imprevistos</p>
+        </a>
+      </div>
+
+      <div class="grid grid--5" style="margin-top: var(--space-6);">
+        <a href="/seguro-decesos/" class="insurance-type-card">
+          <img class="insurance-type-card__icon" src="/assets/img/icons/decesos.svg" alt="" width="56" height="56">
+          <h3 class="insurance-type-card__name">Seguro de Decesos</h3>
+          <p class="insurance-type-card__desc">Tranquilidad para ti y los tuyos</p>
+        </a>
+        <a href="/seguro-mascotas/" class="insurance-type-card">
+          <img class="insurance-type-card__icon" src="/assets/img/icons/mascotas.svg" alt="" width="56" height="56">
+          <h3 class="insurance-type-card__name">Seguro de Mascotas</h3>
+          <p class="insurance-type-card__desc">RC obligatoria y cobertura veterinaria</p>
+        </a>
+        <a href="/seguro-viaje/" class="insurance-type-card">
+          <img class="insurance-type-card__icon" src="/assets/img/icons/viaje.svg" alt="" width="56" height="56">
+          <h3 class="insurance-type-card__name">Seguro de Viaje</h3>
+          <p class="insurance-type-card__desc">Viaja tranquilo por todo el mundo</p>
+        </a>
+        <a href="/seguro-comunidades/" class="insurance-type-card">
+          <img class="insurance-type-card__icon" src="/assets/img/icons/comunidades.svg" alt="" width="56" height="56">
+          <h3 class="insurance-type-card__name">Seguro de Comunidades</h3>
+          <p class="insurance-type-card__desc">Para comunidades de propietarios</p>
+        </a>
+        <a href="/seguro-autonomos/" class="insurance-type-card">
+          <img class="insurance-type-card__icon" src="/assets/img/icons/autonomos.svg" alt="" width="56" height="56">
+          <h3 class="insurance-type-card__name">Seguro de Autónomos</h3>
+          <p class="insurance-type-card__desc">RC profesional y multirriesgo negocio</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY US ========== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">¿Por qué usar TodoSeguros?</h2>
+
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">🔍</div>
+          <h3 class="feature-title">Comparamos por ti</h3>
+          <p class="feature-desc">Analizamos las mejores aseguradoras de España para que tú solo elijas.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🆓</div>
+          <h3 class="feature-title">100% gratuito</h3>
+          <p class="feature-desc">Compara gratis. No vendemos tus datos ni te presionamos.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📊</div>
+          <h3 class="feature-title">Datos actualizados</h3>
+          <p class="feature-desc">Información actualizada de precios y coberturas verificadas en 2026.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STATS BANNER ========== -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="stats-banner">
+        <div class="grid grid--4">
+          <div>
+            <h3 class="stats-banner__title">El mercado de seguros en España</h3>
+          </div>
+          <div class="stats-banner__stat">
+            <div class="stats-banner__number">65.000M€</div>
+            <div class="stats-banner__label">Primas anuales</div>
+          </div>
+          <div class="stats-banner__stat">
+            <div class="stats-banner__number">12M</div>
+            <div class="stats-banner__label">Pólizas de salud privada</div>
+          </div>
+          <div class="stats-banner__stat">
+            <div class="stats-banner__number">+4,2%</div>
+            <div class="stats-banner__label">Subida primas 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AD SLOT 2 ========== -->
+  <div class="ad-container ad-container--horizontal">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-1513893788851225"
+         data-ad-slot="YYYYYYYY"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ========== CTA CALCULATOR ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner">
+        <h2 class="cta-banner__title">¿No sabes qué seguro necesitas?</h2>
+        <p class="cta-banner__text">Usa nuestra calculadora gratuita para estimar tu presupuesto mensual en seguros.</p>
+        <a href="/calculadora/" class="btn-primary">Usar calculadora →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">TodoSeguros</div>
+          <p class="footer-desc">Comparador de seguros en España. Información gratuita y sin compromiso para que encuentres el mejor seguro al mejor precio.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Seguros</h4>
+          <div class="footer-links">
+            <a href="/seguro-coche/">Seguro de Coche</a>
+            <a href="/seguro-moto/">Seguro de Moto</a>
+            <a href="/seguro-hogar/">Seguro de Hogar</a>
+            <a href="/seguro-salud/">Seguro de Salud</a>
+            <a href="/seguro-vida/">Seguro de Vida</a>
+            <a href="/seguro-decesos/">Seguro de Decesos</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Más Seguros</h4>
+          <div class="footer-links">
+            <a href="/seguro-mascotas/">Seguro de Mascotas</a>
+            <a href="/seguro-viaje/">Seguro de Viaje</a>
+            <a href="/seguro-comunidades/">Seguro de Comunidades</a>
+            <a href="/seguro-autonomos/">Seguro de Autónomos</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Recursos</h4>
+          <div class="footer-links">
+            <a href="/calculadora/">Calculadora</a>
+            <a href="/aviso-legal/">Aviso Legal</a>
+            <a href="/privacidad/">Privacidad</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 todoseguros.pro — Sitio informativo. No somos agentes ni corredores de seguros.</span>
+        <div class="footer-legal-links">
+          <a href="/aviso-legal/">Aviso Legal</a>
+          <a href="/privacidad/">Política de Privacidad</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/comparator.js"></script>
+  <script src="/assets/js/chatbot.js"></script>
+  <script src="/assets/js/analytics.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://todoseguros.pro/sitemap.xml
+
+# Bloquear recursos innecesarios para bots
+User-agent: *
+Disallow: /assets/js/chatbot.js
+Disallow: /workers/

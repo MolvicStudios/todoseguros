@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Hiscox",
+    "logo": "hiscox",
+    "avg_monthly": 25,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": false,
+    "website": "https://www.hiscox.es",
+    "highlights": ["Especialista en RC profesional", "Ideal para freelances y consultores", "Contratación 100% online", "Cobertura de ciberriesgos"],
+    "rating": 4.2,
+    "featured": true
+  },
+  {
+    "name": "Mapfre Autónomos",
+    "logo": "mapfre",
+    "avg_monthly": 30,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.mapfre.es/seguros/autonomos/",
+    "highlights": ["RC profesional + multirriesgo", "Cobertura de local y mercancías", "Asistencia jurídica laboral", "Seguro de accidentes incluido"],
+    "rating": 4.0,
+    "featured": false
+  },
+  {
+    "name": "AXA Autónomos",
+    "logo": "axa",
+    "avg_monthly": 28,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.axa.es/seguros-autonomos",
+    "highlights": ["Planes modulares", "RC profesional flexible", "Protección de equipos informáticos", "Asistencia informática"],
+    "rating": 3.9,
+    "featured": false
+  },
+  {
+    "name": "Zurich PYMES",
+    "logo": "zurich",
+    "avg_monthly": 35,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.zurich.es/seguros/pymes",
+    "highlights": ["Multirriesgo comercio", "Cobertura de pérdida de beneficios", "Protección de empleados", "Seguro de transporte de mercancías"],
+    "rating": 3.8,
+    "featured": false
+  },
+  {
+    "name": "Caser Autónomos",
+    "logo": "caser",
+    "avg_monthly": 22,
+    "national": true,
+    "online_quotes": true,
+    "phone_spanish": true,
+    "app_mobile": true,
+    "website": "https://www.caser.es/seguros/autonomos",
+    "highlights": ["Precio muy competitivo", "RC profesional desde 22€/mes", "Multirriesgo negocio", "Asistencia integral"],
+    "rating": 3.7,
+    "featured": true
+  }
+]
