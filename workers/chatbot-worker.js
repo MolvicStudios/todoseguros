@@ -46,6 +46,7 @@ NO HAGAS:
 const ALLOWED_ORIGINS = [
   'https://todoseguros.pro',
   'https://www.todoseguros.pro',
+  'https://todoseguros.pages.dev',
   'http://localhost:8788',
   'http://localhost:3000',
   'http://127.0.0.1:8788',
