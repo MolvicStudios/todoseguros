@@ -37,66 +37,88 @@
 <body>
 <!-- mylead-verification: c48768fd7ff97997507ecca6ff5b908f -->
 
+    <!-- ========== HEADER ========== -->
   <header class="site-header">
-    <div class="header-inner">
-      <a href="/" class="header-logo" aria-label="TodoSeguros - Inicio">
-        <img src="/assets/img/logo.svg" alt="TodoSeguros" width="200" height="36">
+    <nav class="nav container">
+      <a href="/" class="nav-logo" aria-label="TodoSeguros - Inicio">
+        <div class="nav-logo__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2L4 6v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V6L12 2z" fill="white" opacity=".9"/>
+            <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="nav-logo__text">TodoSeguros</span>
       </a>
-      <nav class="nav-links" aria-label="Navegación principal">
+
+      <div class="nav-links">
+        <!-- Dropdown Personales -->
         <div class="nav-dropdown">
-          <span class="nav-dropdown-trigger">Personales</span>
-          <div class="nav-dropdown-menu">
-            <a href="/seguro-coche/">🚗 Seguro de Coche</a>
-            <a href="/seguro-moto/">🏍️ Seguro de Moto</a>
-            <a href="/seguro-hogar/">🏠 Seguro de Hogar</a>
-            <a href="/seguro-salud/">🏥 Seguro de Salud</a>
-            <a href="/seguro-vida/">❤️ Seguro de Vida</a>
-            <a href="/seguro-decesos/">⚱️ Seguro de Decesos</a>
+          <button class="nav-dropdown__trigger">
+            Personales
+            <svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="nav-dropdown__menu">
+            <a href="/seguro-coche/" class="nav-dropdown__item"><span class="nav-dropdown__item-icon">🚗</span> Seguro de Coche</a>
+            <a href="/seguro-moto/" class="nav-dropdown__item"><span class="nav-dropdown__item-icon">🏍️</span> Seguro de Moto</a>
+            <a href="/seguro-hogar/" class="nav-dropdown__item"><span class="nav-dropdown__item-icon">🏠</span> Seguro de Hogar</a>
+            <a href="/seguro-salud/" class="nav-dropdown__item active"><span class="nav-dropdown__item-icon">🏥</span> Seguro de Salud</a>
+            <a href="/seguro-vida/" class="nav-dropdown__item"><span class="nav-dropdown__item-icon">❤️</span> Seguro de Vida</a>
+            <a href="/seguro-decesos/" class="nav-dropdown__item"><span class="nav-dropdown__item-icon">⚱️</span> Seguro de Decesos</a>
           </div>
         </div>
+        <!-- Dropdown Otros -->
         <div class="nav-dropdown">
-          <span class="nav-dropdown-trigger">Otros seguros</span>
-          <div class="nav-dropdown-menu">
-            <a href="/seguro-mascotas/">🐾 Seguro de Mascotas</a>
-            <a href="/seguro-viaje/">✈️ Seguro de Viaje</a>
-            <a href="/seguro-comunidades/">🏢 Seguro de Comunidades</a>
-            <a href="/seguro-autonomos/">💼 Seguro de Autónomos</a>
+          <button class="nav-dropdown__trigger">
+            Otros seguros
+            <svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="nav-dropdown__menu">
+            <a href="/seguro-mascotas/" class="nav-dropdown__item"><span class="nav-dropdown__item-icon">🐾</span> Mascotas</a>
+            <a href="/seguro-viaje/" class="nav-dropdown__item"><span class="nav-dropdown__item-icon">✈️</span> Viaje</a>
+            <a href="/seguro-comunidades/" class="nav-dropdown__item"><span class="nav-dropdown__item-icon">🏢</span> Comunidades</a>
+            <a href="/seguro-autonomos/" class="nav-dropdown__item"><span class="nav-dropdown__item-icon">💼</span> Autónomos</a>
           </div>
         </div>
-        <a href="/calculadora/">Calculadora</a>
-      </nav>
-      <div class="header-right">
-        <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false">
+        <a href="/calculadora/" class="nav-link">📊 Calculadora</a>
+      </div>
+
+      <div class="nav-right">
+        <a href="#comparador" class="btn btn-primary nav-cta-desktop">Comparar ahora</a>
+        <button class="nav-hamburger" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
-    </div>
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil">
-      <span class="mobile-nav-section">Seguros Personales</span>
-      <a href="/seguro-coche/">🚗 Seguro de Coche</a>
-      <a href="/seguro-moto/">🏍️ Seguro de Moto</a>
-      <a href="/seguro-hogar/">🏠 Seguro de Hogar</a>
-      <a href="/seguro-salud/">🏥 Seguro de Salud</a>
-      <a href="/seguro-vida/">❤️ Seguro de Vida</a>
-      <a href="/seguro-decesos/">⚱️ Seguro de Decesos</a>
-      <span class="mobile-nav-section">Otros Seguros</span>
-      <a href="/seguro-mascotas/">🐾 Seguro de Mascotas</a>
-      <a href="/seguro-viaje/">✈️ Seguro de Viaje</a>
-      <a href="/seguro-comunidades/">🏢 Seguro de Comunidades</a>
-      <a href="/seguro-autonomos/">💼 Seguro de Autónomos</a>
-      <span class="mobile-nav-section">Herramientas</span>
-      <a href="/calculadora/">📊 Calculadora</a>
     </nav>
+
+    <!-- Mobile panel -->
+    <div class="nav-mobile-panel" id="nav-mobile" role="navigation">
+      <div style="font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;padding:8px 16px">Seguros personales</div>
+      <a href="/seguro-coche/" class="nav-mobile-link">🚗 Seguro de Coche</a>
+      <a href="/seguro-moto/" class="nav-mobile-link">🏍️ Seguro de Moto</a>
+      <a href="/seguro-hogar/" class="nav-mobile-link">🏠 Seguro de Hogar</a>
+      <a href="/seguro-salud/" class="nav-mobile-link">🏥 Seguro de Salud</a>
+      <a href="/seguro-vida/" class="nav-mobile-link">❤️ Seguro de Vida</a>
+      <a href="/seguro-decesos/" class="nav-mobile-link">⚱️ Seguro de Decesos</a>
+      <div class="nav-mobile-sep"></div>
+      <div style="font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;padding:8px 16px">Otros seguros</div>
+      <a href="/seguro-mascotas/" class="nav-mobile-link">🐾 Mascotas</a>
+      <a href="/seguro-viaje/" class="nav-mobile-link">✈️ Viaje</a>
+      <a href="/seguro-comunidades/" class="nav-mobile-link">🏢 Comunidades</a>
+      <a href="/seguro-autonomos/" class="nav-mobile-link">💼 Autónomos</a>
+      <div class="nav-mobile-sep"></div>
+      <div style="font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;padding:8px 16px">Herramientas</div>
+      <a href="/calculadora/" class="nav-mobile-link">📊 Calculadora</a>
+    </div>
   </header>
 
-  <section class="hero">
+  <section class="hero hero--page">
     <div class="container">
-      <h1 class="hero-title">Seguro de Salud Privado en España</h1>
-      <p class="hero-subtitle">Accede a sanidad privada sin listas de espera. Compara las mejores aseguradoras de salud con cuadros médicos completos.</p>
-      <div class="hero-cta">
-        <a href="#comparador" class="btn-primary">Comparar aseguradoras →</a>
-      </div>
-    </div>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Inicio</a> <span aria-hidden="true">›</span> <span>Seguro de Salud</span>
+      </nav>
+      <h1 class="hero__title">Seguro de Salud Privado en España</h1>
+      <p class="hero__subtitle">Accede a sanidad privada sin listas de espera. Compara las mejores aseguradoras de salud con cuadros médicos completos.</p>
+</div>
   </section>
 
   <section class="section">
@@ -109,7 +131,7 @@
     </div>
   </section>
 
-  <section class="section section--alt"><div class="container"><h2 class="section-title">Tipos de Seguro de Salud</h2><div class="grid grid--3">
+  <section class="section section--alt"><div class="container"><h2 class="section__title">Tipos de Seguro de Salud</h2><div class="grid grid--3">
         <div class="metric-card"><h3 style="font-family:var(--font-display);margin-bottom:var(--space-3)">Cuadro Médico</h3><div class="metric-card__value">42-70€</div><div class="metric-card__label">/mes</div><p style="font-size:var(--text-sm);color:var(--color-text-mid);margin-top:var(--space-3)">Accedes a médicos y centros de la red de la aseguradora. El más contratado.</p></div>
         <div class="metric-card"><h3 style="font-family:var(--font-display);margin-bottom:var(--space-3)">Con Copago</h3><div class="metric-card__value">35-55€</div><div class="metric-card__label">/mes</div><p style="font-size:var(--text-sm);color:var(--color-text-mid);margin-top:var(--space-3)">Prima más baja a cambio de pagar una pequeña cantidad por consulta/prueba.</p></div>
         <div class="metric-card"><h3 style="font-family:var(--font-display);margin-bottom:var(--space-3)">Reembolso</h3><div class="metric-card__value">100-200€</div><div class="metric-card__label">/mes</div><p style="font-size:var(--text-sm);color:var(--color-text-mid);margin-top:var(--space-3)">Vas al médico que quieras y la aseguradora te reembolsa un porcentaje.</p></div>
@@ -117,14 +139,14 @@
 
   <section class="section" id="comparador">
     <div class="container">
-      <h2 class="section-title">Compara Aseguradoras</h2>
+      <h2 class="section__title">Compara Aseguradoras</h2>
       <div class="company-grid" id="comparator-results" data-type="salud"></div>
     </div>
   </section>
   <!-- ========== PARTNER ADS — MyLoan ========== -->
   <section class="section">
     <div class="container">
-      <p class="section-subtitle" style="font-size:12px;color:var(--color-text-light);margin-bottom:var(--space-4);">Publicidad</p>
+      <p class="section__subtitle" style="font-size:12px;color:var(--color-text-light);margin-bottom:var(--space-4);">Publicidad</p>
       <div class="partner-ads">
         <div class="partner-ad">
           <script type="text/javascript" id="en5AMnCml7AFZBoYcJMd" src="https://low-prices.eu/js/script_en5AMnCml7AFZBoYcJMd.js"></script>
@@ -152,7 +174,7 @@
 
   <section class="section section--alt">
     <div class="container">
-      <h2 class="section-title">Preguntas Frecuentes</h2>
+      <h2 class="section__title">Preguntas Frecuentes</h2>
       <div class="faq-list">
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">¿Merece la pena un seguro de salud privado en España?</button>
@@ -178,44 +200,54 @@
     </div>
   </section>
 
-  <footer class="site-footer">
+    <!-- ========== FOOTER ========== -->
+  <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="footer-brand">TodoSeguros</div>
-          <p class="footer-desc">Comparador de seguros en España. Información gratuita y sin compromiso.</p>
+          <a href="/" class="footer-brand__logo">
+            <div class="nav-logo__icon" style="width:28px;height:28px">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V6L12 2z" fill="white" opacity=".9"/><path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="footer-brand__name">TodoSeguros</span>
+          </a>
+          <p class="footer-brand__desc">Comparador de seguros en España. Información gratuita y sin compromiso para que encuentres el mejor seguro al mejor precio.</p>
         </div>
         <div>
-          <h4 class="footer-heading">Seguros</h4>
-          <div class="footer-links">
-            <a href="/seguro-coche/">Seguro de Coche</a>
-            <a href="/seguro-moto/">Seguro de Moto</a>
-            <a href="/seguro-hogar/">Seguro de Hogar</a>
-            <a href="/seguro-salud/">Seguro de Salud</a>
-            <a href="/seguro-vida/">Seguro de Vida</a>
-            <a href="/seguro-decesos/">Seguro de Decesos</a>
+          <div class="footer-col__title">Seguros</div>
+          <div class="footer-col__links">
+            <a href="/seguro-coche/"   class="footer-col__link">🚗 Coche</a>
+            <a href="/seguro-moto/"    class="footer-col__link">🏍️ Moto</a>
+            <a href="/seguro-hogar/"   class="footer-col__link">🏠 Hogar</a>
+            <a href="/seguro-salud/"   class="footer-col__link">🏥 Salud</a>
+            <a href="/seguro-vida/"    class="footer-col__link">❤️ Vida</a>
+            <a href="/seguro-decesos/" class="footer-col__link">⚱️ Decesos</a>
           </div>
         </div>
         <div>
-          <h4 class="footer-heading">Más Seguros</h4>
-          <div class="footer-links">
-            <a href="/seguro-mascotas/">Seguro de Mascotas</a>
-            <a href="/seguro-viaje/">Seguro de Viaje</a>
-            <a href="/seguro-comunidades/">Seguro de Comunidades</a>
-            <a href="/seguro-autonomos/">Seguro de Autónomos</a>
+          <div class="footer-col__title">Más seguros</div>
+          <div class="footer-col__links">
+            <a href="/seguro-mascotas/"    class="footer-col__link">🐾 Mascotas</a>
+            <a href="/seguro-viaje/"       class="footer-col__link">✈️ Viaje</a>
+            <a href="/seguro-comunidades/" class="footer-col__link">🏢 Comunidades</a>
+            <a href="/seguro-autonomos/"   class="footer-col__link">💼 Autónomos</a>
+            <a href="/calculadora/"        class="footer-col__link">📊 Calculadora</a>
           </div>
         </div>
         <div>
-          <h4 class="footer-heading">Recursos</h4>
-          <div class="footer-links">
-            <a href="/calculadora/">Calculadora</a>
-            <a href="/aviso-legal/">Aviso Legal</a>
-            <a href="/privacidad/">Privacidad</a>
+          <div class="footer-col__title">Legal</div>
+          <div class="footer-col__links">
+            <a href="/privacidad/"  class="footer-col__link">Privacidad</a>
+            <a href="/aviso-legal/" class="footer-col__link">Aviso Legal</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2026 todoseguros.pro — Sitio informativo. No somos agentes ni corredores de seguros.</span>
+        <span class="footer-bottom__copy">© 2026 todoseguros.pro — Sitio informativo. No somos agentes ni corredores de seguros.</span>
+        <div class="footer-bottom__links">
+          <a href="/privacidad/"  class="footer-bottom__link">Privacidad</a>
+          <a href="/aviso-legal/" class="footer-bottom__link">Aviso Legal</a>
+        </div>
       </div>
     </div>
   </footer>
