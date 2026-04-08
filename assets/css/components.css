@@ -422,11 +422,16 @@
    ========================================================================== */
 .ad-container {
   min-height: 90px;
-  text-align: center;
+  width: 100%;
+  display: block;
+  overflow: hidden;
   margin: var(--space-8) auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
+}
+.ad-container ins {
+  display: block !important;
+  min-width: 1px;
+  min-height: 1px;
 }
 
 .ad-container--horizontal {
@@ -797,4 +802,80 @@
 
 .legal-content a:hover {
   color: #B04A1E;
+}
+
+/* ==========================================================================
+   Calculadora — resultado
+   ========================================================================== */
+.calc-error {
+  background: #FAEEDA;
+  color: #633806;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+/* ==========================================================================
+   Comparador — skeleton loader + grid + estados
+   ========================================================================== */
+.skeleton-card {
+  background: linear-gradient(90deg, var(--color-bg-card, #f9f9f9) 25%, var(--color-border, #e0e0e0) 50%, var(--color-bg-card, #f9f9f9) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  height: 200px;
+  border-radius: var(--radius-lg);
+  margin-bottom: 12px;
+}
+@keyframes skeleton-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.comparator-loading {
+  padding: 1rem 0;
+}
+
+.comparator-error,
+.comparator-empty {
+  text-align: center;
+  padding: 2rem;
+  background: var(--color-bg-card, #fff);
+  border-radius: var(--radius-lg);
+}
+.comparator-error button {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+/* ==========================================================================
+   Tablas responsivas
+   ========================================================================== */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+.table-responsive table {
+  min-width: 500px;
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-responsive th,
+.table-responsive td {
+  white-space: nowrap;
+  padding: 10px 14px;
+  font-size: 13px;
+}
+@media (max-width: 600px) {
+  .table-responsive th,
+  .table-responsive td {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
 }

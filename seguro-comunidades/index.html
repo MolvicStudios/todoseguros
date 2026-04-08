@@ -6,6 +6,9 @@
   <title>Seguro de Comunidades de Propietarios 2026 | TodoSeguros</title>
   <meta name="description" content="Compara seguros de comunidades de propietarios en España. Protege los elementos comunes del edificio desde 38€/mes.">
   <link rel="canonical" href="https://todoseguros.pro/seguro-comunidades/">
+    <meta property="og:image" content="https://todoseguros.pro/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:title" content="Seguro de Comunidades de Propietarios 2026 | TodoSeguros">
   <meta property="og:description" content="Compara seguros de comunidades de propietarios en España. Protege los elementos comunes del edificio desde 38€/mes.">
   <meta property="og:url" content="https://todoseguros.pro/seguro-comunidades/">
@@ -29,6 +32,7 @@
   }
   </script>
   <meta name="mylead-verification" content="c48768fd7ff97997507ecca6ff5b908f">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
 </head>
 <body>
 <!-- mylead-verification: c48768fd7ff97997507ecca6ff5b908f -->
@@ -110,13 +114,12 @@
   <section class="section" id="comparador">
     <div class="container">
       <h2 class="section-title">Compara Aseguradoras</h2>
-      <div class="company-grid" id="comparator-results"></div>
+      <div class="company-grid" id="comparator-results" data-type="comunidades"></div>
     </div>
   </section>
 
   <div class="ad-container ad-container--horizontal">
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1513893788851225" data-ad-slot="XXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 
   
@@ -198,44 +201,6 @@
   </footer>
 
   <script src="/assets/js/main.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-      const container = document.getElementById('comparator-results');
-      if (!container) return;
-      let data = [];
-      try { const res = await fetch('/data/companies-comunidades.json'); data = await res.json(); }
-      catch { try { const res = await fetch('../data/companies-comunidades.json'); data = await res.json(); } catch {} }
-      data.sort((a, b) => {
-        if (a.featured && !b.featured) return -1;
-        if (!a.featured && b.featured) return 1;
-        return (a.avg_monthly_min || a.avg_monthly || 999) - (b.avg_monthly_min || b.avg_monthly || 999);
-      });
-      container.innerHTML = data.map(c => {
-        const price = c.avg_monthly_min || c.avg_monthly;
-        return `<article class="company-card ${c.featured ? 'company-card--featured' : ''}">
-          ${c.featured ? '<div class="badge-featured">⭐ Destacado</div>' : ''}
-          <div class="company-card__header">
-            <div class="company-logo"><img src="/assets/img/logos/${c.logo}.svg" alt="${c.name}" width="80" height="40" loading="lazy" onerror="this.style.display='none'"></div>
-            <div class="company-meta">
-              <h3 class="company-name">${c.name}</h3>
-              ${c.market_share ? '<span class="market-share">' + c.market_share + ' cuota de mercado</span>' : ''}
-              ${c.rating ? '<span class="market-share">⭐ ' + c.rating + '/5</span>' : ''}
-            </div>
-          </div>
-          <div class="company-card__price">
-            ${price ? '<span class="price-label">Desde</span><span class="price-amount">' + price + '€</span><span class="price-period">/mes</span>' : '<span class="price-label">Consultar precio</span>'}
-          </div>
-          <div class="company-card__features">
-            ${c.online_quotes ? '<span class="feature-tag feature-tag--online">🖥️ Online</span>' : ''}
-            ${c.phone_spanish ? '<span class="feature-tag feature-tag--phone">📞 Teléfono</span>' : ''}
-            ${c.app_mobile ? '<span class="feature-tag feature-tag--ok">✓ App móvil</span>' : ''}
-          </div>
-          <ul class="company-highlights">${c.highlights.map(h => '<li>' + h + '</li>').join('')}</ul>
-          <a href="${c.website}" target="_blank" rel="noopener nofollow" class="btn-primary btn-block">Ver ofertas →</a>
-        </article>`;
-      }).join('');
-    });
-  </script>
   <script src="/assets/js/chatbot.js"></script>
   <script src="/assets/js/analytics.js"></script>
 </body>

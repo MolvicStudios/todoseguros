@@ -1,9 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /assets/
+Disallow: /workers/
 
 Sitemap: https://todoseguros.pro/sitemap.xml
-
-# Bloquear recursos innecesarios para bots
-User-agent: *
-Disallow: /assets/js/chatbot.js
-Disallow: /workers/

@@ -34,7 +34,7 @@ class ChatbotWidget {
         </svg>
         <span class="chatbot-badge" id="chatbot-badge">1</span>
       </button>
-      <div id="chatbot-panel" class="chatbot-panel chatbot-panel--hidden" role="dialog" aria-label="Chat de ayuda">
+      <div id="chatbot-panel" class="chatbot-panel chatbot-panel--hidden" role="dialog" aria-label="Chat de ayuda" aria-modal="true" aria-hidden="true">
         <div class="chatbot-header">
           <div class="chatbot-avatar">TS</div>
           <div>
@@ -149,15 +149,23 @@ class ChatbotWidget {
     const panel = document.getElementById('chatbot-panel');
     const badge = document.getElementById('chatbot-badge');
     const input = document.getElementById('chatbot-input');
-    if (panel) panel.classList.remove('chatbot-panel--hidden');
+    if (panel) {
+      panel.classList.remove('chatbot-panel--hidden');
+      panel.setAttribute('aria-hidden', 'false');
+    }
     if (badge) badge.style.display = 'none';
-    if (input) input.focus();
+    setTimeout(() => { if (input) input.focus(); }, 100);
   }
 
   close() {
     this.isOpen = false;
     const panel = document.getElementById('chatbot-panel');
-    if (panel) panel.classList.add('chatbot-panel--hidden');
+    const toggle = document.getElementById('chatbot-toggle');
+    if (panel) {
+      panel.classList.add('chatbot-panel--hidden');
+      panel.setAttribute('aria-hidden', 'true');
+    }
+    if (toggle) toggle.focus();
   }
 }
 

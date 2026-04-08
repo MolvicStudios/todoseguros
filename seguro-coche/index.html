@@ -6,6 +6,9 @@
   <title>Seguro de Coche Barato 2026 | Compara y Ahorra — TodoSeguros</title>
   <meta name="description" content="Compara seguros de coche en España: terceros, terceros ampliado y todo riesgo. Encuentra el seguro de coche más barato en 2026. Gratis y sin compromiso.">
   <link rel="canonical" href="https://todoseguros.pro/seguro-coche/">
+    <meta property="og:image" content="https://todoseguros.pro/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:title" content="Seguro de Coche Barato 2026 | TodoSeguros">
   <meta property="og:description" content="Compara seguros de coche en España. Terceros desde 15€/mes. Gratis y sin compromiso.">
   <meta property="og:url" content="https://todoseguros.pro/seguro-coche/">
@@ -32,6 +35,7 @@
   }
   </script>
   <meta name="mylead-verification" content="c48768fd7ff97997507ecca6ff5b908f">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
 </head>
 <body>
 <!-- mylead-verification: c48768fd7ff97997507ecca6ff5b908f -->
@@ -178,14 +182,13 @@
         </div>
       </div>
 
-      <div class="company-grid" id="comparator-results"></div>
+      <div class="company-grid" id="comparator-results" data-type="coche"></div>
     </div>
   </section>
 
   <!-- ========== AD SLOT ========== -->
   <div class="ad-container ad-container--horizontal">
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1513893788851225" data-ad-slot="XXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 
   <!-- ========== PRECIOS POR PROVINCIA ========== -->
@@ -327,81 +330,6 @@
   </footer>
 
   <script src="/assets/js/main.js"></script>
-  <script>
-    // Page-specific comparator for coche
-    document.addEventListener('DOMContentLoaded', async () => {
-      const container = document.getElementById('comparator-results');
-      const provinceSelect = document.getElementById('filter-province');
-      const priceSelect = document.getElementById('filter-price');
-      const filterBtn = document.getElementById('filter-btn');
-      if (!container) return;
-
-      // Populate provinces
-      const provinces = ['A Coruña','Álava','Albacete','Alicante','Almería','Asturias','Ávila','Badajoz','Barcelona','Bizkaia','Burgos','Cáceres','Cádiz','Cantabria','Castellón','Ciudad Real','Córdoba','Cuenca','Girona','Granada','Guadalajara','Huelva','Huesca','Illes Balears','Jaén','La Rioja','Las Palmas','León','Lleida','Lugo','Madrid','Málaga','Murcia','Navarra','Ourense','Palencia','Pontevedra','Salamanca','Santa Cruz de Tenerife','Segovia','Sevilla','Soria','Tarragona','Teruel','Toledo','Valencia','Valladolid','Zamora','Zaragoza'];
-      provinceSelect.innerHTML = '<option value="all">Todas las provincias</option>';
-      provinces.forEach(p => { provinceSelect.innerHTML += `<option value="${p}">${p}</option>`; });
-
-      const comp = new (await import('/assets/js/comparator.js').catch(() => ({ default: null }))).default?.('coche') || null;
-
-      // Fallback: load data directly
-      let data = [];
-      try {
-        const res = await fetch('/data/companies-coche.json');
-        data = await res.json();
-      } catch { try {
-        const res = await fetch('../data/companies-coche.json');
-        data = await res.json();
-      } catch { data = []; } }
-
-      function render(companies) {
-        if (companies.length === 0) {
-          container.innerHTML = '<div class="no-results"><p>No encontramos resultados para tus filtros.</p></div>';
-          return;
-        }
-        companies.sort((a, b) => {
-          if (a.featured && !b.featured) return -1;
-          if (!a.featured && b.featured) return 1;
-          return (a.avg_monthly_min || a.avg_monthly || 999) - (b.avg_monthly_min || b.avg_monthly || 999);
-        });
-        container.innerHTML = companies.map(c => {
-          const price = c.avg_monthly_min || c.avg_monthly;
-          return `
-            <article class="company-card ${c.featured ? 'company-card--featured' : ''}">
-              ${c.featured ? '<div class="badge-featured">⭐ Destacado</div>' : ''}
-              <div class="company-card__header">
-                <div class="company-logo"><img src="/assets/img/logos/${c.logo}.svg" alt="${c.name}" width="80" height="40" loading="lazy" onerror="this.style.display='none'"></div>
-                <div class="company-meta">
-                  <h3 class="company-name">${c.name}</h3>
-                  ${c.market_share ? `<span class="market-share">${c.market_share} cuota de mercado</span>` : ''}
-                  ${c.rating ? `<span class="market-share">⭐ ${c.rating}/5</span>` : ''}
-                </div>
-              </div>
-              <div class="company-card__price">
-                ${price ? `<span class="price-label">Desde</span><span class="price-amount">${price}€</span><span class="price-period">/mes</span>` : '<span class="price-label">Consultar precio</span>'}
-              </div>
-              <div class="company-card__features">
-                ${c.online_quotes ? '<span class="feature-tag feature-tag--online">🖥️ Online</span>' : ''}
-                ${c.phone_spanish ? '<span class="feature-tag feature-tag--phone">📞 Teléfono</span>' : ''}
-                ${c.app_mobile ? '<span class="feature-tag feature-tag--ok">✓ App móvil</span>' : ''}
-              </div>
-              <ul class="company-highlights">${c.highlights.map(h => `<li>${h}</li>`).join('')}</ul>
-              <a href="${c.website}" target="_blank" rel="noopener nofollow" class="btn-primary btn-block">Ver ofertas →</a>
-            </article>`;
-        }).join('');
-      }
-
-      filterBtn.addEventListener('click', () => {
-        const maxPrice = parseInt(priceSelect.value) || 999;
-        const filtered = data.filter(c => {
-          const price = c.avg_monthly_min || c.avg_monthly || 0;
-          return !maxPrice || price === 0 || price <= maxPrice;
-        });
-        render(filtered);
-      });
-
-      render(data);
-    });
-  </script>
   <script src="/assets/js/chatbot.js"></script>
   <script src="/assets/js/analytics.js"></script>
 </body>
