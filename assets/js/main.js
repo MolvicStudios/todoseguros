@@ -6,16 +6,25 @@
 // ========== AdSense — inicialización lazy (evita availableWidth=0) ==========
 function initAdSlot(ins) {
   if (!ins) return;
+  const container = ins.closest('.ad-container');
+
+  // Skip ads inside hidden containers (e.g. display:none on mobile)
+  if (container && getComputedStyle(container).display === 'none') return;
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting && entry.target.offsetWidth > 0) {
+      if (!entry.isIntersecting) return;
+      // Defer to next frame so layout is fully resolved
+      requestAnimationFrame(() => {
+        const w = container ? container.offsetWidth : ins.offsetWidth;
+        if (w < 50) return; // still hidden / too narrow — observer will retry on next intersection
         try {
           (window.adsbygoogle = window.adsbygoogle || []).push({});
         } catch(e) {
           console.warn('AdSense init skipped:', e.message);
         }
-        observer.unobserve(entry.target);
-      }
+        observer.unobserve(ins);
+      });
     });
   }, { threshold: 0.1 });
   observer.observe(ins);
@@ -24,7 +33,20 @@ function initAdSlot(ins) {
 document.addEventListener('DOMContentLoaded', () => {
 
   // Inicializar slots AdSense con lazy loading
-  document.querySelectorAll('ins.adsbygoogle').forEach(initAdSlot);
+  const adSlots = document.querySelectorAll('ins.adsbygoogle');
+  adSlots.forEach(initAdSlot);
+
+  // Re-attempt hidden ad slots on resize (e.g. device rotation)
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      adSlots.forEach(ins => {
+        if (ins.dataset.adStatus) return; // already initialized by AdSense
+        initAdSlot(ins);
+      });
+    }, 300);
+  });
 
   // ========== Mobile Menu ==========
   const hamburger = document.getElementById('hamburger-btn');

@@ -444,7 +444,7 @@
 
 @media (max-width: 768px) {
   .ad-container--horizontal {
-    display: none;
+    max-width: 100%;
   }
 }
 
