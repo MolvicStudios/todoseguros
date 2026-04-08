@@ -1,90 +1,75 @@
-// ==========================================================================
-// main.js — Funcionalidad global (menú, FAQ, tabs)
-// todoseguros.pro
-// ==========================================================================
+// ── Nav hamburger ────────────────────────────────────────────
+const toggle = document.getElementById('nav-toggle');
+const panel  = document.getElementById('nav-mobile');
 
-document.addEventListener('DOMContentLoaded', () => {
-
-  // ========== Mobile Menu ==========
-  const hamburger = document.getElementById('hamburger-btn');
-  const mobileNav = document.getElementById('mobile-nav');
-
-  if (hamburger && mobileNav) {
-    hamburger.addEventListener('click', () => {
-      const isOpen = mobileNav.classList.toggle('open');
-      hamburger.classList.toggle('active');
-      hamburger.setAttribute('aria-expanded', isOpen);
-    });
-
-    // Close on link click
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-        hamburger.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-
-  // Cerrar menú mobile al hacer clic fuera de él
-  document.addEventListener('click', (e) => {
-    if (mobileNav && hamburger && mobileNav.classList.contains('open')) {
-      if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
-        mobileNav.classList.remove('open');
-        hamburger.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-      }
+if (toggle && panel) {
+  toggle.addEventListener('click', () => {
+    const isOpen = panel.classList.toggle('is-open');
+    toggle.classList.toggle('is-active', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  document.addEventListener('click', e => {
+    if (panel.classList.contains('is-open') && !panel.contains(e.target) && !toggle.contains(e.target)) {
+      panel.classList.remove('is-open');
+      toggle.classList.remove('is-active');
+      toggle.setAttribute('aria-expanded', false);
+      document.body.style.overflow = '';
     }
   });
-
-  // Cerrar menú mobile al cambiar tamaño de ventana
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 768 && mobileNav) {
-      mobileNav.classList.remove('open');
-      if (hamburger) {
-        hamburger.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-      }
+    if (window.innerWidth > 768) {
+      panel.classList.remove('is-open');
+      toggle.classList.remove('is-active');
+      document.body.style.overflow = '';
     }
   });
+}
 
-  // ========== FAQ Accordion accesible ==========
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const question = item.querySelector('.faq-question');
-    const answer   = item.querySelector('.faq-answer');
-    if (!question || !answer) return;
-
-    const id = `faq-${Math.random().toString(36).slice(2, 8)}`;
-    answer.id = id;
-    question.id = id + '-q';
-    question.setAttribute('aria-controls', id);
-    question.setAttribute('aria-expanded', 'false');
-    question.setAttribute('role', 'button');
-    question.setAttribute('tabindex', '0');
-    answer.setAttribute('role', 'region');
-    answer.setAttribute('aria-labelledby', id + '-q');
-    answer.style.display = 'none';
-
-    function toggle() {
-      const isOpen = answer.style.display !== 'none';
-      answer.style.display = isOpen ? 'none' : 'block';
-      question.setAttribute('aria-expanded', String(!isOpen));
-      item.classList.toggle('is-open', !isOpen);
-      item.classList.toggle('active', !isOpen);
-    }
-
-    question.addEventListener('click', toggle);
-    question.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
-    });
-  });
-
-  // ========== Hero Tabs (link to pages) ==========
-  document.querySelectorAll('.hero-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.hero-tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-    });
-  });
-
+// ── Marcar nav-link activo según URL ─────────────────────────
+document.querySelectorAll('.nav-link, .nav-mobile-link').forEach(link => {
+  if (link.href && window.location.pathname.startsWith(new URL(link.href, location.href).pathname) && link.getAttribute('href') !== '/') {
+    link.classList.add('active');
+  }
 });
+
+// ── FAQ Accordion accesible ───────────────────────────────────
+document.querySelectorAll('.faq-item').forEach((item, idx) => {
+  const q = item.querySelector('.faq-question');
+  const a = item.querySelector('.faq-answer');
+  if (!q || !a) return;
+  const id = `faq-answer-${idx}`;
+  a.id = id;
+  q.setAttribute('aria-controls', id);
+  q.setAttribute('aria-expanded', 'false');
+  q.setAttribute('role', 'button');
+  q.setAttribute('tabindex', '0');
+  a.setAttribute('role', 'region');
+
+  function toggle() {
+    const open = item.classList.toggle('is-open');
+    q.setAttribute('aria-expanded', open);
+    if (open) a.focus();
+  }
+  q.addEventListener('click', toggle);
+  q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+});
+
+// ── Smooth scroll CTAs ────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// ── Mini comparador hero ──────────────────────────────────────
+function heroCompare() {
+  const type = document.querySelector('input[name="hero-type"]:checked')?.value || 'coche';
+  const province = document.getElementById('hero-province')?.value || 'todas';
+  const url = `/seguro-${type}/?provincia=${encodeURIComponent(province)}`;
+  window.location.href = url;
+}
