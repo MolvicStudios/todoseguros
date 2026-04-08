@@ -3,13 +3,4 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://low-prices.eu; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://low-prices.eu; font-src https://fonts.gstatic.com; img-src 'self' data: https: blob:; frame-src https://low-prices.eu; connect-src 'self' https://todoseguros-bot.josemmolera.workers.dev https://molvicstudios-analytics.josemmolera.workers.dev https://api.groq.com https://low-prices.eu; worker-src blob:;
-
-/assets/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/data/*
-  Cache-Control: public, max-age=86400
-
-/*.html
-  Cache-Control: public, max-age=3600
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https: blob:; frame-src https://todoseguros-bot.josemmolera.workers.dev; connect-src 'self' https://todoseguros-bot.josemmolera.workers.dev https://molvicstudios-analytics.josemmolera.workers.dev https://api.groq.com; worker-src blob:;
