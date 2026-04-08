@@ -373,7 +373,7 @@
 
 .company-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--space-6);
 }
 
@@ -387,10 +387,6 @@
   .grid--3,
   .grid--4,
   .grid--5 {
-    grid-template-columns: 1fr;
-  }
-
-  .company-grid {
     grid-template-columns: 1fr;
   }
 }

@@ -418,37 +418,6 @@
 }
 
 /* ==========================================================================
-   Ads containers
-   ========================================================================== */
-.ad-container {
-  min-height: 90px;
-  width: 100%;
-  display: block;
-  overflow: hidden;
-  margin: var(--space-8) auto;
-  text-align: center;
-}
-.ad-container ins {
-  display: block !important;
-  min-width: 1px;
-  min-height: 1px;
-}
-
-.ad-container--horizontal {
-  max-width: 728px;
-}
-
-.ad-container--rect {
-  max-width: 300px;
-}
-
-@media (max-width: 768px) {
-  .ad-container--horizontal {
-    max-width: 100%;
-  }
-}
-
-/* ==========================================================================
    Forms / Inputs
    ========================================================================== */
 .form-group {
