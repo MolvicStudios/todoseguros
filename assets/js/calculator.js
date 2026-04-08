@@ -48,6 +48,7 @@ function getFormData() {
     age:      parseInt(document.getElementById('calc-age')?.value)    || 35,
     income:   parseInt(document.getElementById('calc-income')?.value) || 25000,
     housing:  document.getElementById('calc-housing')?.value || 'propietario',
+    sqm:      parseInt(document.getElementById('calc-sqm')?.value) || 80,
     dogs:     parseInt(document.getElementById('calc-dogs')?.value)   || 0,
     cats:     parseInt(document.getElementById('calc-cats')?.value)   || 0,
     types: Array.from(
@@ -90,6 +91,13 @@ function calcular(e) {
     if (tipo === 'hogar' && data.housing === 'alquiler') {
       min = Math.round(min * 0.55);
       max = Math.round(max * 0.55);
+    }
+
+    // Ajuste por superficie en hogar
+    if (tipo === 'hogar') {
+      const sqmMult = data.sqm / 80;
+      min = Math.round(min * sqmMult);
+      max = Math.round(max * sqmMult);
     }
 
     // Ajuste por edad en salud

@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const id = `faq-${Math.random().toString(36).slice(2, 8)}`;
     answer.id = id;
+    question.id = id + '-q';
     question.setAttribute('aria-controls', id);
     question.setAttribute('aria-expanded', 'false');
     question.setAttribute('role', 'button');
