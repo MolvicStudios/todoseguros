@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 400" fill="none">
+  <!-- Fondo abstracto profesional -->
+  <rect x="60" y="40" width="360" height="320" rx="24" fill="#EBF2FF" opacity=".5"/>
+  <!-- Gráfico de barras ascendentes (ahorro) -->
+  <rect x="120" y="280" width="40" height="60" rx="6" fill="#1A4FA0" opacity=".3"/>
+  <rect x="180" y="240" width="40" height="100" rx="6" fill="#1A4FA0" opacity=".5"/>
+  <rect x="240" y="190" width="40" height="150" rx="6" fill="#1A4FA0" opacity=".7"/>
+  <rect x="300" y="150" width="40" height="190" rx="6" fill="#1A4FA0" opacity=".9"/>
+  <!-- Línea tendencia -->
+  <path d="M140 275 L200 235 L260 185 L320 145" stroke="#00A896" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 4"/>
+  <!-- Escudo protección -->
+  <path d="M220 60 L260 75 L260 115 C260 135 242 148 220 155 C198 148 180 135 180 115 L180 75 Z" fill="#1A4FA0" opacity=".12"/>
+  <path d="M220 68 L253 81 L253 114 C253 131 237 143 220 149 C203 143 187 131 187 114 L187 81 Z" fill="none" stroke="#1A4FA0" stroke-width="2.5" opacity=".5"/>
+  <path d="M208 110 L218 120 L235 100" stroke="#00A896" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Puntos estadísticas -->
+  <circle cx="380" cy="100" r="30" fill="#1A4FA0" opacity=".08"/>
+  <text x="380" y="96" text-anchor="middle" font-size="11" fill="#1A4FA0" font-weight="700" opacity=".8">40%</text>
+  <text x="380" y="110" text-anchor="middle" font-size="9" fill="#1A4FA0" opacity=".6">ahorro</text>
+  <!-- Decorativos -->
+  <circle cx="100" cy="150" r="6" fill="#00A896" opacity=".4"/>
+  <circle cx="400" cy="280" r="5" fill="#1A4FA0" opacity=".3"/>
+  <circle cx="370" cy="80" r="4" fill="#EBF2FF" stroke="#1A4FA0" stroke-width="1.5"/>
+</svg>
