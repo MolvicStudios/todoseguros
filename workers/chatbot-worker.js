@@ -79,16 +79,25 @@ export default {
     }
 
     try {
-      const { message, history = [] } = await request.json();
+      const body = await request.json();
+      const userMessages = body.messages;
 
-      if (!message || typeof message !== 'string' || message.trim().length === 0) {
+      if (!Array.isArray(userMessages) || userMessages.length === 0) {
         return new Response(JSON.stringify({ error: 'Mensaje vacío' }), {
           status: 400,
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       }
 
-      if (message.length > 1000) {
+      const lastMsg = userMessages[userMessages.length - 1];
+      if (!lastMsg || !lastMsg.content || typeof lastMsg.content !== 'string' || lastMsg.content.trim().length === 0) {
+        return new Response(JSON.stringify({ error: 'Mensaje vacío' }), {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+
+      if (lastMsg.content.length > 1000) {
         return new Response(JSON.stringify({ error: 'Mensaje demasiado largo (máx. 1000 caracteres)' }), {
           status: 400,
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -97,11 +106,10 @@ export default {
 
       const messages = [
         { role: 'system', content: SYSTEM_PROMPT },
-        ...history.slice(-6).map(m => ({
+        ...userMessages.slice(-6).map(m => ({
           role: m.role === 'assistant' ? 'assistant' : 'user',
           content: String(m.content).slice(0, 1000),
         })),
-        { role: 'user', content: message.trim() },
       ];
 
       const groqResponse = await fetch('https://api.groq.com/openai/v1/chat/completions', {
