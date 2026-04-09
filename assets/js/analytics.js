@@ -89,9 +89,11 @@
     }
   })
   window.onerror = function(message, source, lineno, colno, error) {
+    var src = String(source || '')
+    if (src && src.indexOf(SITE) === -1 && src.indexOf(location.hostname) === -1) return false
     send('js_error', {
       error_message: String(message).substring(0, 200),
-      error_source: String(source || '').substring(0, 200),
+      error_source: src.substring(0, 200),
       error_line: lineno || 0,
       error_col: colno || 0,
       error_stack: (error && error.stack) ? error.stack.substring(0, 500) : '',
