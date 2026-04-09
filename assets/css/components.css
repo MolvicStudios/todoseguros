@@ -56,7 +56,7 @@
 /* ── Company cards ── */
 .company-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
   gap: var(--space-4);
   margin-top: var(--space-6);
 }
@@ -88,7 +88,7 @@
 .company-card__highlight::before { content: '✓'; color: var(--success); font-weight: 700; flex-shrink: 0; }
 
 /* ── Skeleton loader ── */
-.skeleton-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: var(--space-4); margin-top: var(--space-6); }
+.skeleton-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px,100%),1fr)); gap: var(--space-4); margin-top: var(--space-6); }
 .skeleton-card {
   height: 280px; border-radius: var(--r-lg);
   background: linear-gradient(90deg, var(--bg-section) 25%, var(--border-light) 50%, var(--bg-section) 75%);

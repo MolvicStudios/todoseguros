@@ -3,6 +3,17 @@
 // Usado por la home (modo multi-tipo) y por TODAS las páginas de tipo
 // ==========================================================================
 
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function fetchWithTimeout(url, ms = 8000) {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), ms);
+  return fetch(url, { signal: controller.signal }).finally(() => clearTimeout(id));
+}
+
 class InsuranceComparator {
   constructor({ containerId = 'comparator-results', type, filterProvinceId, filterPriceId, filterBtnId } = {}) {
     this.container = document.getElementById(containerId);
@@ -18,7 +29,7 @@ class InsuranceComparator {
     if (!this.container || !this.type) return;
     this.showLoading();
     try {
-      const res = await fetch(`/data/companies-${this.type}.json`);
+      const res = await fetchWithTimeout(`/data/companies-${this.type}.json`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       this.data = await res.json();
       this.render(this.data);
@@ -58,17 +69,21 @@ class InsuranceComparator {
       if (!a.featured && b.featured) return 1;
       return (a.avg_monthly_min || a.avg_monthly || 999) - (b.avg_monthly_min || b.avg_monthly || 999);
     });
-    this.container.innerHTML = `<div class="company-grid">${sorted.map(c => this.renderCard(c)).join('')}</div>`;
+    this.container.innerHTML = sorted.map(c => this.renderCard(c)).join('');
   }
 
   renderCard(c) {
+    const name = escapeHtml(c.name);
+    const logo = escapeHtml(c.logo || 'default');
+    const website = escapeHtml(c.website || '#');
+    const marketShare = escapeHtml(c.market_share);
     const price = c.avg_monthly_min || c.avg_monthly;
     const priceHtml = price
       ? `<div class="company-card__price"><span class="price-label">Desde</span> <span class="price-amount">${price}€</span><span class="price-period">/mes</span></div>`
       : `<div class="company-card__price"><span class="price-label">Consultar precio</span></div>`;
 
     const highlights = Array.isArray(c.highlights)
-      ? `<ul class="company-highlights">${c.highlights.map(h => `<li>${h}</li>`).join('')}</ul>`
+      ? `<ul class="company-highlights">${c.highlights.map(h => `<li>${escapeHtml(h)}</li>`).join('')}</ul>`
       : '';
 
     const features = [
@@ -86,18 +101,18 @@ class InsuranceComparator {
         ${c.featured ? '<div class="badge-featured">⭐ Destacado</div>' : ''}
         <div class="company-card__header">
           <div class="company-logo">
-            <img src="/assets/img/logos/${c.logo || 'default'}.svg" alt="${c.name}" width="80" height="40" loading="lazy" onerror="this.style.display='none'">
+            <img src="/assets/img/logos/${logo}.svg" alt="${name}" width="80" height="40" loading="lazy" onerror="this.style.display='none'">
           </div>
           <div class="company-meta">
-            <h3 class="company-name">${c.name}</h3>
-            ${c.market_share ? `<span class="market-share">${c.market_share} cuota de mercado</span>` : ''}
+            <h3 class="company-name">${name}</h3>
+            ${marketShare ? `<span class="market-share">${marketShare} cuota de mercado</span>` : ''}
             ${rating}
           </div>
         </div>
         ${priceHtml}
         ${features ? `<div class="company-card__features">${features}</div>` : ''}
         ${highlights}
-        <a href="${c.website || '#'}" target="_blank" rel="noopener nofollow" class="btn-primary btn-block">
+        <a href="${website}" target="_blank" rel="noopener nofollow" class="btn-primary btn-block">
           Ver ofertas →
         </a>
       </article>`;
@@ -154,10 +169,9 @@ const SPAIN_PROVINCES = [
 
 function populateProvinceDropdown(selectEl) {
   if (!selectEl) return;
-  selectEl.innerHTML = '<option value="all">Todas las provincias</option>';
-  SPAIN_PROVINCES.forEach(p => {
-    selectEl.innerHTML += `<option value="${p}">${p}</option>`;
-  });
+  const opts = ['<option value="all">Todas las provincias</option>'];
+  SPAIN_PROVINCES.forEach(p => { opts.push(`<option value="${p}">${p}</option>`); });
+  selectEl.innerHTML = opts.join('');
 }
 
 // ── Auto-inicializar para páginas de tipo (data-type en #comparator-results) ──
@@ -191,46 +205,37 @@ async function initHomeComparator() {
   const comparators = {};
   const types = ['coche', 'moto', 'hogar', 'salud', 'vida', 'decesos', 'mascotas', 'viaje', 'comunidades', 'autonomos'];
 
-  // Show skeleton while loading first type
-  const tempComp = new InsuranceComparator({ type: 'coche' });
-  tempComp.showLoading();
+  // Show skeleton while loading
+  container.innerHTML = '<div class="comparator-loading"><div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div></div>';
 
-  for (const type of types) {
+  const results = await Promise.all(types.map(async type => {
     try {
-      const res = await fetch(`/data/companies-${type}.json`);
-      const data = res.ok ? await res.json() : [];
-      comparators[type] = { data };
-    } catch { comparators[type] = { data: [] }; }
-  }
+      const res = await fetchWithTimeout(`/data/companies-${type}.json`);
+      return { type, data: res.ok ? await res.json() : [] };
+    } catch { return { type, data: [] }; }
+  }));
+  results.forEach(({ type, data }) => { comparators[type] = { data }; });
 
   function applyFilters() {
     const type = typeSelect.value;
     const province = provinceSelect?.value || 'all';
     const maxPrice = parseInt(priceSelect?.value) || 999;
 
-    const fakeComp = new InsuranceComparator({ type: type === 'all' ? 'coche' : type });
-    fakeComp.container = container;
+    const renderer = new InsuranceComparator({ type: type === 'all' ? 'coche' : type });
+    renderer.container = container;
 
     let results = [];
-    if (type === 'all') {
-      types.forEach(t => {
-        (comparators[t]?.data || []).forEach(c => {
-          const provOk = province === 'all' || c.national || (Array.isArray(c.available_provinces) && c.available_provinces.includes(province));
-          const price  = c.avg_monthly_min || c.avg_monthly || 0;
-          const priceOk = price === 0 || price <= maxPrice;
-          if (provOk && priceOk) results.push(c);
-        });
-      }) ;
-    } else {
-      (comparators[type]?.data || []).forEach(c => {
+    const typesToFilter = type === 'all' ? types : [type];
+    typesToFilter.forEach(t => {
+      (comparators[t]?.data || []).forEach(c => {
         const provOk = province === 'all' || c.national || (Array.isArray(c.available_provinces) && c.available_provinces.includes(province));
         const price  = c.avg_monthly_min || c.avg_monthly || 0;
         const priceOk = price === 0 || price <= maxPrice;
         if (provOk && priceOk) results.push(c);
       });
-    }
+    });
 
-    fakeComp.render(results);
+    renderer.render(results);
   }
 
   filterBtn?.addEventListener('click', applyFilters);
