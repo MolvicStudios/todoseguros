@@ -29,32 +29,6 @@
 
 
   <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "TodoSeguros",
-    "url": "https://todoseguros.pro",
-    "description": "Comparador de seguros en España. Coche, hogar, salud, vida, decesos, moto, mascotas, viaje, comunidades y autónomos.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://todoseguros.pro/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    },
-    "inLanguage": "es"
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "TodoSeguros",
-    "url": "https://todoseguros.pro",
-    "logo": "https://todoseguros.pro/assets/img/og-image.jpg",
-    "description": "Comparador de seguros en España. Información gratuita y sin compromiso.",
-    "sameAs": []
-  }
-  </script>
   <meta name="mylead-verification" content="c48768fd7ff97997507ecca6ff5b908f">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
 
@@ -65,6 +39,10 @@
   <meta name="twitter:description" content="Compara seguros de coche, hogar, vida y salud en España. Ahorra hasta un 40% con nuestro comparador gratuito. Cotización en 2 minutos.">
   <meta name="twitter:image" content="https://todoseguros.pro/og-image.png">
   <meta name="theme-color" content="#1B2A4A">
+  <!-- Hreflang cluster seguros -->
+  <link rel="alternate" hreflang="es-ES" href="https://todoseguros.pro/" />
+  <link rel="alternate" hreflang="es-US" href="https://segurosenespanol.pro/" />
+  <link rel="alternate" hreflang="x-default" href="https://segurosenespanol.pro/" />
 </head>
 <body>
 <!-- mylead-verification: c48768fd7ff97997507ecca6ff5b908f -->
@@ -491,5 +469,90 @@
   <script src="/assets/js/chatbot.js" defer></script>
   <script src="/assets/js/analytics.js" defer></script>
 <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support me on Ko-fi', '#72a4f2', 'E1E41XP6I9');kofiwidget2.draw();</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "InsuranceAgency",
+      "@id": "https://todoseguros.pro/#organization",
+      "name": "TodoSeguros.pro",
+      "url": "https://todoseguros.pro",
+      "description": "Comparador de seguros de coche, hogar, vida y salud en España",
+      "areaServed": {
+        "@type": "Country",
+        "name": "España"
+      },
+      "knowsLanguage": "es",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ES"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo funciona el comparador de seguros?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nuestro comparador analiza las ofertas de las principales aseguradoras en España. Introduces tus datos una sola vez y recibes cotizaciones personalizadas de múltiples compañías. La comparación es gratuita y sin compromiso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto puedo ahorrar comparando seguros?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De media, los usuarios que comparan seguros ahorran entre un 20% y un 40% respecto a su póliza actual. El ahorro depende del tipo de seguro y tu perfil, pero siempre merece la pena comparar antes de renovar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué tipos de seguros puedo comparar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puedes comparar seguros de coche (terceros, terceros ampliado, todo riesgo), seguros de hogar, seguros de vida, seguros de salud y seguros de moto. Todos de aseguradoras autorizadas por la DGSFP."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es seguro introducir mis datos en el comparador?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Utilizamos cifrado HTTPS y cumplimos con el RGPD europeo. Tus datos solo se usan para generar cotizaciones y nunca se venden a terceros sin tu consentimiento explícito."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Las aseguradoras del comparador son fiables?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Todas las aseguradoras listadas están autorizadas por la Dirección General de Seguros y Fondos de Pensiones (DGSFP) del Gobierno de España y cuentan con la solvencia exigida por la normativa europea Solvencia II."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://todoseguros.pro/"
+    }
+  ]
+}
+</script>
 </body>
 </html>
